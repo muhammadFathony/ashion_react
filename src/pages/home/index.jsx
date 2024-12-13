@@ -7,15 +7,16 @@ import category3 from "../../assets/img/categories/category-3.jpg"
 import category4 from "../../assets/img/categories/category-4.jpg"
 import category5 from "../../assets/img/categories/category-5.jpg"
 
-import product1 from "../../assets/img/product/product-1.jpg";
-import product2 from "../../assets/img/product/product-2.jpg";
-import product3 from "../../assets/img/product/product-3.jpg";
-import product4 from "../../assets/img/product/product-4.jpg";
+import product1 from "../../assets/img/product/product-1.jpg"
+import product2 from "../../assets/img/product/product-2.jpg"
+import product3 from "../../assets/img/product/product-3.jpg"
+import product4 from "../../assets/img/product/product-4.jpg"
 
-
+import banner from "../../assets/img/banner/banner-1.jpg"
 const ContainCateogories = lazy(() => import("../../components/categories"))
 const ConatinCategory = lazy(() => import("../../components/categories/category"))
 const Products = lazy(() => import("../../components/products"))
+const Banner = lazy(() => import("../../components/banner"))
 const categories = [
     {
         img: category1,
@@ -114,6 +115,7 @@ const Component = () => {
                     </Suspense>
                 </div>
             </section>
+            <Banner img={banner} />
         </>
     )
 }
