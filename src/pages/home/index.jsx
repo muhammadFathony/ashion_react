@@ -90,32 +90,31 @@ const Component = () => {
         }
     }, [])
     return (
-        <>
+        <>  <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
             <section className="categories">
                 <div className="container-fluid">
                     <div className="row">
-                        <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
-                            <ConatinCategory
-                                title={categories[0].title}
-                                subtitle={categories[0].subtitle}
-                                img={categories[0].img}
-                                big={true}
-                            />
-                            <div className="col-lg-6">
-                                <ContainCateogories categories={categories} />
-                            </div>
-                        </Suspense>
+                        <ConatinCategory
+                            title={categories[0].title}
+                            subtitle={categories[0].subtitle}
+                            img={categories[0].img}
+                            big={true}
+                        />
+                        <div className="col-lg-6">
+                            <ContainCateogories categories={categories} />
+                        </div>
                     </div>
                 </div>
             </section>
             <section className="product spad">
                 <div className="container">
-                    <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
-                        <Products products={products} />
-                    </Suspense>
+
+                    <Products products={products} />
                 </div>
             </section>
-            <Banner img={banner} />
+            <Banner sliders={categories} />
+        </Suspense>
+
         </>
     )
 }
