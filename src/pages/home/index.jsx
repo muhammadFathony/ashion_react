@@ -12,7 +12,6 @@ import product2 from "../../assets/img/product/product-2.jpg"
 import product3 from "../../assets/img/product/product-3.jpg"
 import product4 from "../../assets/img/product/product-4.jpg"
 
-import banner from "../../assets/img/banner/banner-1.jpg"
 const ContainCateogories = lazy(() => import("../../components/categories"))
 const ConatinCategory = lazy(() => import("../../components/categories/category"))
 const Products = lazy(() => import("../../components/products"))
