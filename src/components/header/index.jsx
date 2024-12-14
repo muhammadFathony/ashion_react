@@ -1,4 +1,4 @@
-import Logo from "../../assets/img/logo.png"
+import logo from "../../assets/img/logo.png"
 const Header = () => {
     return (
         <>
@@ -7,7 +7,7 @@ const Header = () => {
                     <div className="row">
                         <div className="col-xl-3 col-lg-2">
                             <div className="header__logo">
-                                <a href="./index.html"><img src={Logo} alt="logo.png" /></a>
+                                <a href="./index.html"><img src={logo} alt="logo.png" /></a>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-10 text-right">
