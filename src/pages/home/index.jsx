@@ -16,6 +16,7 @@ const ContainCateogories = lazy(() => import("../../components/categories"))
 const ConatinCategory = lazy(() => import("../../components/categories/category"))
 const Products = lazy(() => import("../../components/products"))
 const Banner = lazy(() => import("../../components/banner"))
+const TrendItem = lazy(() => import("../../components/trends"))
 const categories = [
     {
         img: category1,
@@ -75,7 +76,6 @@ const products = [
 ]
 const Component = () => {
     const containerRef = useRef(null);
-
     useEffect(() => {
         if (containerRef.current) {
             mixitup(containerRef.current, {
@@ -89,31 +89,72 @@ const Component = () => {
         }
     }, [])
     return (
-        <>  <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
-            <section className="categories">
-                <div className="container-fluid">
-                    <div className="row">
-                        <ConatinCategory
-                            title={categories[0].title}
-                            subtitle={categories[0].subtitle}
-                            img={categories[0].img}
-                            big={true}
-                        />
-                        <div className="col-lg-6">
-                            <ContainCateogories categories={categories} />
+        <>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <section className="categories">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <ConatinCategory
+                                title={categories[0].title}
+                                subtitle={categories[0].subtitle}
+                                img={categories[0].img}
+                                big={true}
+                            />
+                            <div className="col-lg-6">
+                                <ContainCateogories categories={categories} />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className="product spad">
-                <div className="container">
-
-                    <Products products={products} />
-                </div>
-            </section>
-            <Banner sliders={categories} />
-        </Suspense>
-
+                </section>
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <section className="product spad">
+                    <div className="container">
+                        <Products products={products} />
+                    </div>
+                </section>
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <Banner sliders={categories} />
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <section className="trend spad">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-lg-4 col-md-4 col-sm-6">
+                                <div className="trend__content">
+                                    <div className="section-title">
+                                        <h4>Hot Trend</h4>
+                                    </div>
+                                    {products.slice(0,3).map((value, index) =>(
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-4 col-sm-6">
+                                <div className="trend__content">
+                                    <div className="section-title">
+                                        <h4>Best Seller</h4>
+                                    </div>
+                                    {products.slice(0,3).map((value, index) =>(
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="col-lg-4 col-md-4 col-sm-6">
+                                <div className="trend__content">
+                                    <div className="section-title">
+                                        <h4>New Products</h4>
+                                    </div>
+                                    {products.slice(0,3).map((value, index) =>(
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </Suspense>
         </>
     )
 }
