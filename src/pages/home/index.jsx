@@ -17,6 +17,9 @@ const ConatinCategory = lazy(() => import("../../components/categories/category"
 const Products = lazy(() => import("../../components/products"))
 const Banner = lazy(() => import("../../components/banner"))
 const TrendItem = lazy(() => import("../../components/trends"))
+const Discount = lazy(() => import("../../components/discount"))
+const Spad = lazy(() => import("../../components/spad"))
+const Instagram = lazy(() => import("../../components/instagram"))
 const categories = [
     {
         img: category1,
@@ -126,8 +129,8 @@ const Component = () => {
                                     <div className="section-title">
                                         <h4>Hot Trend</h4>
                                     </div>
-                                    {products.slice(0,3).map((value, index) =>(
-                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    {products.slice(0, 3).map((value, index) => (
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price} />
                                     ))}
                                 </div>
                             </div>
@@ -136,8 +139,8 @@ const Component = () => {
                                     <div className="section-title">
                                         <h4>Best Seller</h4>
                                     </div>
-                                    {products.slice(0,3).map((value, index) =>(
-                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    {products.slice(0, 3).map((value, index) => (
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price} />
                                     ))}
                                 </div>
                             </div>
@@ -146,14 +149,31 @@ const Component = () => {
                                     <div className="section-title">
                                         <h4>New Products</h4>
                                     </div>
-                                    {products.slice(0,3).map((value, index) =>(
-                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price}/>
+                                    {products.slice(0, 3).map((value, index) => (
+                                        <TrendItem key={index} title={value.title} img={value.img} price={value.price} />
                                     ))}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <Discount />
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <Spad />
+            </Suspense>
+            <Suspense fallback={<div className="col-md-12 text-center">Loading ....</div>}>
+                <div className="instagram">
+                    <div className="container-fluid">
+                        <div className="row">
+                            {[...Array(6)].map((_, index) => (
+                                <Instagram key={index} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </Suspense>
         </>
     )
