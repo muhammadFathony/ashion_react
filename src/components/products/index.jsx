@@ -24,7 +24,7 @@ const Component = ({products}) => {
             <div className="row property__gallery">
                 {
                     products.length > 0 ? products.map((value, key) => (
-                        <Item img={value.img} title={value.title} price={value.price} status={value.status} category={value.category} key={key}  />
+                        <Item slug={value.slug} img={value.img} title={value.title} price={value.price} status={value.status} category={value.category} key={key}  />
                     )) :
                     'Empty'
                 }

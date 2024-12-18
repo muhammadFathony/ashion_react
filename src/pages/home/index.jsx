@@ -53,28 +53,32 @@ const products = [
         img: product1,
         price: "$ 59.0",
         status: "new",
-        category: "men"
+        category: "men",
+        slug: 'bad-123'
     },
     {
         title: "Bag",
         img: product2,
         price: "$ 59.0",
         status: "stockout",
-        category: "women"
+        category: "women",
+        slug: 'bad-124'
     },
     {
         title: "Bag",
         img: product3,
         price: "$ 59.0",
         status: "stockout",
-        category: "women"
+        category: "women",
+        slug: 'bad-125'
     },
     {
         title: "Bag",
         img: product4,
         price: "$ 59.0",
         status: "stockout",
-        category: "men"
+        category: "men",
+        slug: 'bad-126'
     }
 ]
 const Component = () => {

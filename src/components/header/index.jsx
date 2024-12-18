@@ -1,4 +1,5 @@
 import logo from "../../assets/img/logo.png"
+import { NavLink } from "react-router-dom"
 const Header = () => {
     return (
         <>
@@ -7,13 +8,13 @@ const Header = () => {
                     <div className="row">
                         <div className="col-xl-3 col-lg-2">
                             <div className="header__logo">
-                                <a href="./index.html"><img src={logo} alt="logo.png" /></a>
+                                <NavLink to="/"><img src={logo} alt="logo.png" /></NavLink>
                             </div>
                         </div>
                         <div className="col-xl-6 col-lg-10 text-right">
                             <nav className="header__menu">
                                 <ul>
-                                    <li className="active"><a href="./index.html">Home</a></li>
+                                    <li className="active"><NavLink to="/">Home</NavLink></li>
                                 </ul>
                             </nav>
                         </div>
